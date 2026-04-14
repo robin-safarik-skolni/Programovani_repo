@@ -21,7 +21,7 @@ public class Main {
 
 
         int cislo = 0;
-
+        System.out.println("hahahahahahgahahahahaha");
         switch (ch) {
             case '1': cislo = 1; break;
             case '2': cislo = 2; break;
