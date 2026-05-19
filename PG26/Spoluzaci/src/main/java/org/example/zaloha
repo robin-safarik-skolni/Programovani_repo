@@ -1,0 +1,22 @@
+package org.example;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
+
+public class Median {
+    Path cesta = Paths.get("seznam.txt");
+    try (BufferedReader reader = Files.newBufferedReader(cesta)) {
+
+        String radek;
+        while ((radek = reader.readLine()) != null) {
+            System.out.println(radek);
+        }
+    } catch (IOException e) {
+        System.err.println("Chyba při čtení ze souboru: " + e.getMessage());
+    }
+}
