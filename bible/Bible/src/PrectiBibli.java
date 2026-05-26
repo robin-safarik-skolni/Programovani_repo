@@ -8,7 +8,6 @@ public class PrectiBibli {
         String jmenoSouboru = "src\\complet.txt";
         File soubor = new File(jmenoSouboru);
         Scanner sc = null;
-        int pocitadlo = 0;
         ArrayList arr = new ArrayList(); //vyroste tak, jak potřebujem
 
         try {
@@ -26,11 +25,23 @@ public class PrectiBibli {
             System.out.println("Nenalezení.");
         }
         System.out.println(arr.size());
+        System.out.println(pocitadlo);
+        System.out.println(nejdelsiSlovo);
 
     }
+    static long pocitadlo = 0;
+    static String nejdelsiSlovo = "";
+
     private static boolean uzJsmeTohleSlovoVideli(String slovo, ArrayList arr) {
         for(int i = 0; i < arr.size(); i++){
             String znameSlovo = arr.get(i).toString();
+
+            pocitadlo++;
+
+            if(slovo.length() > nejdelsiSlovo.length()){
+                nejdelsiSlovo = slovo;
+            }
+
             if(slovo.equals(znameSlovo)){
                 return true;
             }
